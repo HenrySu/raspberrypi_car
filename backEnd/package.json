@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "pi car backend server",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "henry",
+  "license": "MIT",
+  "dependencies": {
+    "pi-gpio": "0.0.8"
+  }
+}
