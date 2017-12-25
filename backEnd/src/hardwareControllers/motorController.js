@@ -1,4 +1,4 @@
-const gpio = process.env.NODE_ENV !== "production" ? 
+const Gpio = process.env.NODE_ENV !== "production" ? 
     require("pigpio-mock") : 
     require("pigpio");
 
@@ -6,14 +6,14 @@ class MotorController {
     constructor(pinNum, isReverse = false){
         this.pinNum = pinNum;
         this.isReverse = isReverse;
-        gpio.open(this.pinNum, "output");
+        this.gpio = new Gpio(this.pinNum, {mode:Gpio.OUTPUT});
     }
     
     forward(){
-        gpio.write(this.pinNum, 1);        
+        this.gpio.digitalWrite(1);
     }
     backward(){
-        gpio.write(this.pinNum, 0);        
+        this.gpio.digitalWrite(1);
     }
 
 }
