@@ -13,5 +13,8 @@
     "express": "^4.16.2",
     "pi-gpio": "0.0.8",
     "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "pigpio-mock": "0.0.1"
   }
 }
