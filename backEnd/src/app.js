@@ -11,6 +11,10 @@ let car = builder.withWheel({wheelPosition: wheelPositions.LeftFront, pinNum: 22
                  .withWheel({wheelPosition: wheelPositions.RightFront, pinNum: 25, isReverse:false})
                  .withWheel({whealPosition: wheelPositions.RightBack, pinNum: 24, isReverse: true});
 
+while(true){
+    car.moveForward();
+}
+
 let app = express();
 app.set('port', process.env.PORT || 3000);
 
