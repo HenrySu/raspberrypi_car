@@ -3,12 +3,8 @@ let async = require("async");
 require("./motorController");
 
 class CarController{
-    constructor(leftFrontWheel, rightFrontWheel, leftBackWheel, rightBackWeel){
-        this.leftBack = leftBackWheel;
-        this.leftFront = leftFrontWheel;
-        this.rightBack = rightBackWeel;
-        this.rightFront = rightFrontWheel;
-        this.wheels = [leftBackWheel, leftFrontWheel, rightFrontWheel,rightBack];
+    constructor(){
+        this.wheels = [this.leftBack, this.leftFront, this.rightFront,this.rightBack];
     }
 
     //todo: use async and make all wheels move simutaniously
@@ -26,3 +22,5 @@ class CarController{
     turnLeft(){}
     turnRight(){}
 }
+
+module.exports = CarController;

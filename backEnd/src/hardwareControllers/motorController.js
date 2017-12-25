@@ -1,10 +1,12 @@
 let gpio = require("pi-gpio");
 
 class MotorController {
-    constructor(pinNum){
+    constructor(pinNum, isReverse = false){
         this.pinNum = pinNum;
+        this.isReverse = isReverse;
         gpio.open(this.pinNum, "output");
     }
+    
     forward(){
         gpio.write(this.pinNum, 1);        
     }
@@ -13,3 +15,5 @@ class MotorController {
     }
 
 }
+
+module.exports = MotorController;
