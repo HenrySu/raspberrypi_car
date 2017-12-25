@@ -2,13 +2,14 @@ let express = require("express");
 let http = require("http");
 let async = require("async");
 let carBuilder = require("./carBuilder");
+let wheelPositions = require("./wheelPositions");
 let messageHandler = require("./messageHandler");
 
 let builder = new carBuilder();
-let car = builder.withWheel({wheelPosition: "leftFront", pinNum: 22,isReverse:false})
-            .withWheel({wheelPosition:"leftBack", pinNum: 27,isReverse: true})
-            .withWheel({wheelPosition:"rightFront", pinNum: 25, isReverse:false})
-            .withWheel({whealPosition:"rightBack", pinNum: 24, isReverse: true});
+let car = builder.withWheel({wheelPosition: wheelPositions.LeftFront, pinNum: 22,isReverse:false})
+                 .withWheel({wheelPosition: wheelPositions.LeftBack, pinNum: 27,isReverse: true})
+                 .withWheel({wheelPosition: wheelPositions.RightFront, pinNum: 25, isReverse:false})
+                 .withWheel({whealPosition: wheelPositions.RightBack, pinNum: 24, isReverse: true});
 
 let app = express();
 app.set('port', process.env.PORT || 3000);
