@@ -20,3 +20,5 @@ class CarBuilder{
         return car;
     }
 }
+
+module.exports = CarBuilder;
