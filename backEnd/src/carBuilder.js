@@ -5,9 +5,10 @@ class CarBuilder{
     constructor(){
         this.wheelPosition2Motors = new Map();
     }
-    //withWheel :: string -> number -> bool -> CarBuilder
-    withWheel(postion, pinNum, isReverse){
-        this.wheelPosition2Motors.set(position, new wheel(pinNum, isReverse));
+    //withWheel :: wheelConfig -> CarBuilder
+    //wheelConfig{position:"leftFront", pinNum:12, isReverse:true}
+    withWheel(wheelConfig){
+        this.wheelPosition2Motors.set(wheelConfig.wheelPosition, new wheel(wheelConfig.pinNum, wheelConfig.isReverse));
         return this;
     }
 

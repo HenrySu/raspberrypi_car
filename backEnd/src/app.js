@@ -5,10 +5,10 @@ let carBuilder = require("./carBuilder");
 let messageHandler = require("./messageHandler");
 
 let builder = new carBuilder();
-let car = builder.withWheel(22)
-            .withWheel(27,true)
-            .withWheel(25)
-            .withWheel(24,true);
+let car = builder.withWheel({wheelPosition: "leftFront", pinNum: 22,isReverse:false})
+            .withWheel({wheelPosition:"leftBack", pinNum: 27,isReverse: true})
+            .withWheel({wheelPosition:"rightFront", pinNum: 25, isReverse:false})
+            .withWheel({whealPosition:"rightBack", pinNum: 24, isReverse: true});
 
 let app = express();
 app.set('port', process.env.PORT || 3000);
