@@ -1,6 +1,6 @@
 const Gpio = process.env.NODE_ENV !== "production" ? 
-    require("pigpio-mock") : 
-    require("pigpio");
+    require("pigpio-mock").Gpio : 
+    require("pigpio").Gpio;
 
 class MotorController {
     constructor(pinNum, isReverse = false){
