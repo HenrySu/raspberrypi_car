@@ -14,7 +14,6 @@ class CarController{
         this.leftWheel.forward();
         this.rightWheel.forward();
     }
-
     moveBackword(){
         this.leftWheel.backward();
         this.rightWheel.backward();
@@ -26,6 +25,10 @@ class CarController{
     turnRight(){
         this.rightWheel.backward();
         this.leftWheel.forward();
+    }
+    stop(){
+        this.rightWheel.stop();
+        this.leftWheel.stop();
     }
 }
 
