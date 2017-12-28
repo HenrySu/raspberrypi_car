@@ -6,9 +6,9 @@ class CarBuilder{
         this.wheelPosition2Motors = new Map();
     }
     //withWheel :: wheelConfig -> CarBuilder
-    //wheelConfig{position:"leftFront", pinNum:12, isReverse:true}
+    //wheelConfig{position:"left", forwardPinNum:22, backwardPinNum:27}
     withWheel(wheelConfig){
-        this.wheelPosition2Motors.set(wheelConfig.wheelPosition, new wheel(wheelConfig.pinNum, wheelConfig.isReverse));
+        this.wheelPosition2Motors.set(wheelConfig.wheelPosition, new wheel(wheelConfig.forwardPinNum, wheelConfig.backwardPinNum));
         return this;
     }
 
@@ -16,6 +16,7 @@ class CarBuilder{
         let car = new carController();
         this.wheelPosition2Motors.forEach((v,k,m)=>{
             car[k] = v;
+            car.addWheel(k, v);
         });
 
         return car;

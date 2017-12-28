@@ -1,8 +1,6 @@
 class WheelPositions{
-    static get LeftFront(){return "leftFront";}
-    static get LeftBack(){return "leftBack";}
-    static get RightFront(){return "rightFront";}
-    static get RightBack(){return "rightFront";}
+    static get Left(){return "left";}
+    static get Right(){return "right";}
 }
 
 module.exports = WheelPositions;
