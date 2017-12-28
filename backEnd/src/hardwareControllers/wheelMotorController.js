@@ -8,7 +8,7 @@ class WheelMotorController {
     constructor(wheelConfig){
         this.forwardGpio = new Gpio(wheelConfig.forwardPinNum, {mode:Gpio.OUTPUT});
         this.backwardGpio = new Gpio(wheelConfig.backwardPinNum, {mode:Gpio.OUTPUT});
-        this.pwm = new Gpio(wheel.wheelConfig.pwmPinNum, {mode:Gpio.OUTPUT});
+        this.pwmGpio = new Gpio(wheel.wheelConfig.pwmPinNum, {mode:Gpio.OUTPUT});
     }
     
     forward(){
@@ -18,6 +18,11 @@ class WheelMotorController {
     backward(){
         this.forwardGpio.digitalWrite(0);
         this.backwardGpio.digitalWrite(1);
+    }
+    stop(){
+        this.forwardGpio.digitalWrite(0);
+        this.backwardGpio.digitalWrite(0);
+        this.pwmGpio.digitalWrite(0);
     }
 
 }
