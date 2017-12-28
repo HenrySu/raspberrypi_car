@@ -1,7 +1,7 @@
 let carController = require("./hardwareControllers/carController");
 let wheel = require("./hardwareControllers/motorController");
 
-class CarBuilder{
+class CarFactory{
     constructor(){
         this.wheelPosition2Motors = new Map();
     }
@@ -23,4 +23,4 @@ class CarBuilder{
     }
 }
 
-module.exports = CarBuilder;
+module.exports = CarFactory;
