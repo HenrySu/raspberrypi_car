@@ -3,9 +3,11 @@ const Gpio = process.env.NODE_ENV !== "production" ?
     require("pigpio").Gpio;
 
 class WheelMotorController {
-    constructor(forwardPinNum, backwardPinNum){
-        this.forwardGpio = new Gpio(forwardPinNum, {mode:Gpio.OUTPUT});
-        this.backwardGpio = new Gpio(backwardPinNum, {mode:Gpio.OUTPUT});
+    //wheelConfig -> WheelMotorController
+    //wheelConfig example {forwardPinNum: 22, backwardPinNum: 27, pwmPinNum: 18}
+    constructor(wheelConfig){
+        this.forwardGpio = new Gpio(wheelConfig.forwardPinNum, {mode:Gpio.OUTPUT});
+        this.backwardGpio = new Gpio(wheelConfig.backwardPinNum, {mode:Gpio.OUTPUT});
     }
     
     forward(){
