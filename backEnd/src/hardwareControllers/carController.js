@@ -1,26 +1,32 @@
 let gpio = require("pi-gpio");
 let async = require("async");
 require("./wheelMotorController");
-let WheelPositions = require("../wheelPositions");
 
 class CarController{
 
-    constructor(){
+    constructor(leftWheel, rightWheel){
+        this.leftWheel = leftWheel;
+        this.rightWheel = rightWheel;
     }
 
     //todo: use async and make all wheels move simutaniously
     moveForward(){
-        this.wheelMap.forEach((wheelMotorController,k,m) => wheelMotorController.forward());
+        this.leftWheel.forward();
+        this.rightWheel.forward();
     }
 
     moveBackword(){
-        this.wheelMap.forEach((wheelMotorController,k,m) => wheelMotorController.backward());
+        this.leftWheel.backward();
+        this.rightWheel.backward();
     }
     turnLeft(){
-        this.wheelMap[WheelPositions.Left].backward();
-        this.wheelMap[WheelPositions.Right].moveForward();
+        this.leftWheel.backward();
+        this.rightWheel.forward();
     }
-    turnRight(){}
+    turnRight(){
+        this.rightWheel.backward();
+        this.leftWheel.forward();
+    }
 }
 
 module.exports = CarController;

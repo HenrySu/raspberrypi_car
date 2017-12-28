@@ -2,15 +2,10 @@ let express = require("express");
 let http = require("http");
 let async = require("async");
 let carBuilder = require("./carFactory");
-let wheelPositions = require("./wheelPositions");
 let messageHandler = require("./messageHandler");
 
-let builder = new carFactory();
-
-let car = builder.withWheel({wheelPosition: wheelPositions.LeftFront, pinNum: 22,isReverse:false})
-                 .withWheel({wheelPosition: wheelPositions.LeftBack, pinNum: 27,isReverse: true})
-                 .withWheel({wheelPosition: wheelPositions.RightFront, pinNum: 25, isReverse:false})
-                 .withWheel({whealPosition: wheelPositions.RightBack, pinNum: 24, isReverse: true});
+let carFac = new carFactory();
+let car = carFac.CreateZhiyuCar();
 
 while(true){
     car.moveForward();
