@@ -23,6 +23,7 @@ class WheelMotorController {
         this._pwmGpio.pwmWrite(this._dutyCycle);
     }
     forward(){
+        console.log("forward");
         this._forwardGpio.digitalWrite(1);
         this._backwardGpio.digitalWrite(0);
     }
