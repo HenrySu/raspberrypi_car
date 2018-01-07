@@ -6,13 +6,8 @@ let messageHandler = require("./messageHandler");
 
 let carFac = new carFactory();
 let car = carFac.CreateZhiyuCar();
-
-while(true){
-    car.moveForward();
-}
-
 let app = express();
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 
 let server = http.createServer(app)
 .listen(app.get('port'), () => console.log(`Listening on port ${app.get('port')}`));
