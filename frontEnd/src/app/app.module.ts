@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MovementComponent } from './movement/movement.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovementComponent
   ],
   imports: [
     BrowserModule
