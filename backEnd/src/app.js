@@ -1,11 +1,11 @@
 let express = require("express");
 let http = require("http");
 let async = require("async");
-let carBuilder = require("./carFactory");
+let carFactory= require("./carFactory");
 let messageHandler = require("./messageHandler");
 
 let carFac = new carFactory();
-let car = carFac.CreateZhiyuCar();
+let car = carFac.createZhiyuCar();
 let app = express();
 app.set('port', process.env.PORT || 5000);
 

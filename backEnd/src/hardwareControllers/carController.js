@@ -1,9 +1,3 @@
-let gpio = process.env.NODE_ENV === 'production'? 
-           require("pi-gpio"):
-           requrie("pigpi-mock");
-let async = require("async");
-require("./wheelMotorController");
-
 class CarController{
 
     constructor(leftWheel, rightWheel){

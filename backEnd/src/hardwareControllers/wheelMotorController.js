@@ -1,7 +1,6 @@
 const Gpio = process.env.NODE_ENV !== "production" ? 
     require("pigpio-mock").Gpio : 
     require("pigpio").Gpio;
-const math = require('node-math');
 
 class WheelMotorController {
     //wheelConfig -> WheelMotorController
@@ -13,7 +12,7 @@ class WheelMotorController {
     setupGpios(wheelConfig) {
         this._forwardGpio = new Gpio(wheelConfig.forwardPinNum, { mode: Gpio.OUTPUT });
         this._backwardGpio = new Gpio(wheelConfig.backwardPinNum, { mode: Gpio.OUTPUT });
-        this._pwmGpio = new Gpio(wheel.wheelConfig.pwmPinNum, { mode: Gpio.OUTPUT });
+        this._pwmGpio = new Gpio(wheelConfig.pwmPinNum, { mode: Gpio.OUTPUT });
     }
 
     get Speed() {
