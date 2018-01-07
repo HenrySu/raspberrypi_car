@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarControllerService } from '../car-controller.service';
 
 @Component({
   selector: 'app-movement',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovementComponent implements OnInit {
 
-  constructor() { }
+  constructor(private carController: CarControllerService) { }
 
   ngOnInit() {
   }
 
+  forward(){
+    this.carController.forward();
+  }
 }
