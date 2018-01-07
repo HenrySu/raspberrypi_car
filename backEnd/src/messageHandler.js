@@ -6,10 +6,10 @@ class MessageHandler{
         //listen for move signal
         socket.on('move', function(direction) {
           switch(direction){
-           case 'up':
+           case 'forward':
               this.carController.moveForward();
               break;
-            case 'down':
+            case 'backward':
               this.carController.moveBackward();
               break;
             case 'left':
