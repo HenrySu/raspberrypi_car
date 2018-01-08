@@ -23,7 +23,6 @@ class WheelMotorController {
         this._pwmGpio.pwmWrite(this._dutyCycle);
     }
     forward(){
-        this.Speed = 50;
         this._forwardGpio.digitalWrite(1);
         this._backwardGpio.digitalWrite(0);
     }
