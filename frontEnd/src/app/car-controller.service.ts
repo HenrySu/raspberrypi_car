@@ -4,7 +4,6 @@ import { Subject } from 'rxjs';
 import { CarControlMessage } from './messagePayload';
 @Injectable()
 export class CarControllerService {
-
   private messages: Subject<any>;
 
   constructor(private websocketService: WebsocketService) {
@@ -29,5 +28,13 @@ export class CarControllerService {
 
   public turnRight() {
     this.messages.next(new CarControlMessage('move', 'right'));
+  }
+
+  public stop(){
+    this.messages.next(new CarControlMessage('move', 'stop'))
+  }
+
+  public resume(){
+    this.messages.next(new CarControlMessage('move', 'resume'))
   }
 }
