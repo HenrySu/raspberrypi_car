@@ -25,7 +25,7 @@ class MessageHandler {
     //listen for stop signal
     socket.on('stop', function (_) {
       this._carController.stop();
-    });
+    }.bind(this));
   }
 }
 
