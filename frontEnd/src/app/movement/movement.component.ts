@@ -25,4 +25,7 @@ export class MovementComponent implements OnInit {
   turnRight(){
     this.carController.turnRight();
   }
+  stop(){
+    this.carController.stop();
+  }
 }
