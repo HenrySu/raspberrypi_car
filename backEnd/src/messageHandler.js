@@ -8,7 +8,6 @@ class MessageHandler {
     socket.on('move', function (direction) {
       switch (direction) {
         case 'forward':
-          console.log(car);
           car.moveForward();
           break;
         case 'backward':
