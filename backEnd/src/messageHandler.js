@@ -19,6 +19,9 @@ class MessageHandler {
         case 'right':
           car.turnRight();
           break;
+        case 'stop':
+          car.stop();
+          break;
       }
     });
     //listen for stop signal
