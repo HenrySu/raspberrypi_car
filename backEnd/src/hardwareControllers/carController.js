@@ -7,11 +7,10 @@ class CarController{
 
     //todo: use async and make all wheels move simutaniously
     moveForward(){
-        console.log("car forward");
         this.leftWheel.forward();
         this.rightWheel.forward();
     }
-    moveBackword(){
+    moveBackward(){
         this.leftWheel.backward();
         this.rightWheel.backward();
     }

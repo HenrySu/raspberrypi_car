@@ -16,4 +16,13 @@ export class MovementComponent implements OnInit {
   forward(){
     this.carController.forward();
   }
+  backward(){
+    this.carController.backward();
+  }
+  turnLeft(){
+    this.carController.turnLeft();
+  }
+  turnRight(){
+    this.carController.turnRight();
+  }
 }

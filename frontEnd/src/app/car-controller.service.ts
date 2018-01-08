@@ -6,6 +6,7 @@ import { CarControlMessage } from './messagePayload';
 export class CarControllerService {
 
   private messages: Subject<any>;
+
   constructor(private websocketService: WebsocketService) {
     this.messages = <Subject<any>>websocketService
       .connect()
@@ -15,19 +16,18 @@ export class CarControllerService {
   }
 
   public forward() {
-    this.messages.next(
-      new CarControlMessage('move', 'forward'));
+    this.messages.next(new CarControlMessage('move', 'forward'));
   }
 
   public backward() {
-
+    this.messages.next(new CarControlMessage('move', 'backward'));
   }
 
   public turnLeft() {
-
+    this.messages.next(new CarControlMessage('move', 'left'));
   }
 
   public turnRight() {
-
+    this.messages.next(new CarControlMessage('move', 'right'));
   }
 }
