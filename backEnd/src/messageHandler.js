@@ -3,20 +3,22 @@ class MessageHandler {
     this._carController = carController;
   }
   handle(socket) {
+    const car = this._carController;
     //listen for move signal
     socket.on('move', function (direction) {
       switch (direction) {
         case 'forward':
-          this._carController.moveForward();
+          console.log(car);
+          car.moveForward();
           break;
         case 'backward':
-          this._carController.moveBackward();
+          car.moveBackward();
           break;
         case 'left':
-          this._carController.turnLeft();
+          car.turnLeft();
           break;
         case 'right':
-          this._carController.turnRight();
+          car.turnRight();
           break;
       }
     });
