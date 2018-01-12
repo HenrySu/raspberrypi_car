@@ -12,7 +12,7 @@ export class WebsocketService {
   // Our socket connection
   private socket;
   connect(): Rx.Subject<MessageEvent> {
-    this.socket = io(environment.serverUrl);
+    this.socket = io(environment.movementServerUrl);
 
     // We define our observable which will observe any incoming messages
     // from our socket.io server.

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MovementComponent } from './movement/movement.component';
 import { CarControllerService } from './car-controller.service';
 import { WebsocketService } from './websocket.service';
+import { CameraComponent } from './camera/camera.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MovementComponent
+    MovementComponent,
+    CameraComponent
   ],
   imports: [
     BrowserModule

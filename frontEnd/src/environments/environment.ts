@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  serverUrl: '192.168.1.42:5000'
+  movementServerUrl: '192.168.1.42:5000',
+  cameraServerUrl: '192.168.1.42:8081'
 };
