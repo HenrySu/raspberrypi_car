@@ -14,27 +14,31 @@ export class CarControllerService {
       })
   }
 
+  private sendMessage(messageTopic: string, payload: any): void {
+    this.messages.next(new CarControlMessage(messageTopic, payload));
+  }
+
   public forward() {
-    this.messages.next(new CarControlMessage('move', 'forward'));
+    this.sendMessage('move', 'forward');
   }
 
   public backward() {
-    this.messages.next(new CarControlMessage('move', 'backward'));
+    this.sendMessage('move', 'backward');
   }
 
   public turnLeft() {
-    this.messages.next(new CarControlMessage('move', 'left'));
+    this.sendMessage('move', 'left');
   }
 
   public turnRight() {
-    this.messages.next(new CarControlMessage('move', 'right'));
+    this.sendMessage('move', 'right');
   }
 
-  public stop(){
-    this.messages.next(new CarControlMessage('move', 'stop'))
+  public stop() {
+    this.sendMessage('move', 'stop')
   }
-  
-  public setSpeed(speed){
-    this.messages.next(new CarControlMessage('setSpeed', speed));
+
+  public setSpeed(speed) {
+    this.sendMessage('setSpeed', speed);
   }
 }
