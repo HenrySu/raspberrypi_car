@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CarControllerService } from '../car-controller.service';
+import { prepareProfile } from 'selenium-webdriver/firefox';
 
 @Component({
   selector: 'app-movement',
@@ -9,13 +10,26 @@ import { CarControllerService } from '../car-controller.service';
 export class MovementComponent implements OnInit {
 
   constructor(private carController: CarControllerService) {
-    
-   }
+    this.speed = this.predefinedSpeeds[0];
+  }
 
+  private _speed: string;
+  public get speed() {
+    return this._speed;
+  }
   @Input()
-  public speed: string;
-
-  public readonly predifinedSpeeds: string[] = ["low", "medium", "high"];
+  public set speed(speedStr: string) {
+    this._speed = speedStr;
+    const speedValue = this.speedStr2SpeedValueMap.get(speedStr);
+    this.carController.setSpeed(speedValue);
+  }
+  // public predefinedSpeeds():IterableIterator<string>{
+  //   return this.speedStr2SpeedValueMap.keys();
+  // }
+  public predefinedSpeeds():string[]{
+    return [...this.speedStr2SpeedValueMap.keys()];
+  }
+  public readonly speedStr2SpeedValueMap = new Map<string, number>([["low", 40], ["medium", 80], ["high", 100]]);
 
   ngOnInit() {
   }

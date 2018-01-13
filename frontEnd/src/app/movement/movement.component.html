@@ -3,5 +3,5 @@
 <button id="turnLeft" (mousedown)="turnLeft()" (mouseup)="stop()">turn left</button>
 <button id="turnRight" (mousedown)="turnRight()" (mouseup)="stop()">turn right</button>
 <select [(ngModel)]="speed">
-  <option *ngFor="let speed of predifinedSpeeds" [ngValue]="speed">{{speed}}</option>
+  <option *ngFor="let speed of predefinedSpeeds()" [ngValue]="speed">{{speed}}</option>
 </select>
