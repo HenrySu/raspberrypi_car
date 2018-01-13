@@ -15,10 +15,10 @@ class WheelMotorController {
         this._pwmGpio = new Gpio(wheelConfig.pwmPinNum, { mode: Gpio.OUTPUT });
     }
 
-    get Speed() {
+    get speed() {
         return this._dutyCycle;
     }
-    set Speed(dutyCycle){
+    set speed(dutyCycle){
         this._dutyCycle = dutyCycle;
         this._pwmGpio.pwmWrite(this._dutyCycle);
     }
@@ -33,7 +33,7 @@ class WheelMotorController {
     stop(){
         this._forwardGpio.digitalWrite(0);
         this._backwardGpio.digitalWrite(0);
-        this.Speed = 0;
+        this.speed = 0;
     }
 }
 

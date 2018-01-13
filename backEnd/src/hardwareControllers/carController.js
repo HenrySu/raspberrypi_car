@@ -26,6 +26,10 @@ class CarController{
         this.rightWheel.stop();
         this.leftWheel.stop();
     }
+    setSpeed(speed){
+        this.leftWheel.speed = speed;
+        this.rightWheel.speed = speed;
+    }
 }
 
 module.exports = CarController;
