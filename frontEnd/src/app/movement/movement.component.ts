@@ -17,15 +17,14 @@ export class MovementComponent implements OnInit {
   public get speed() {
     return this._speed;
   }
+
   @Input()
   public set speed(speedStr: string) {
     this._speed = speedStr;
     const speedValue = this.speedStr2SpeedValueMap.get(speedStr);
     this.carController.setSpeed(speedValue);
   }
-  // public predefinedSpeeds():IterableIterator<string>{
-  //   return this.speedStr2SpeedValueMap.keys();
-  // }
+
   public predefinedSpeeds():string[]{
     return [...this.speedStr2SpeedValueMap.keys()];
   }
