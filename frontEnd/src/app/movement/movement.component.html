@@ -1,5 +1,4 @@
-<button id="moveForward" (click)="forward()">forward</button>
-<button id="moveBackward" (click)="backward()">backward</button>
-<button id="turnLeft" (click)="turnLeft()">turn left</button>
-<button id="turnRight" (click)="turnRight()">turn right</button>
-<button id="stop" (click)="stop()">stop</button>
+<button id="moveForward" (mousedown)="forward()" (mouseup)="stop()">forward</button>
+<button id="moveBackward" (mousedown)="backward()" (mouseup)="stop()">backward</button>
+<button id="turnLeft" (mousedown)="turnLeft()" (mouseup)="stop()">turn left</button>
+<button id="turnRight" (mousedown)="turnRight()" (mouseup)="stop()">turn right</button>
