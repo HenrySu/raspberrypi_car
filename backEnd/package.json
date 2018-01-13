@@ -4,7 +4,8 @@
   "description": "pi car backend server",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "sudo NODE_ENV=production node ./src/app.js"
   },
   "author": "henry",
   "license": "MIT",
