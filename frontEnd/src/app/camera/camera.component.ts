@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-camera',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CameraComponent implements OnInit {
 
   constructor() { }
+  public cameraServerUrl: string = `http://${environment.cameraServerUrl}`;
 
   ngOnInit() {
   }
