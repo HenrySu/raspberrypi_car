@@ -33,7 +33,6 @@ class WheelMotorController {
     stop(){
         this._forwardGpio.digitalWrite(0);
         this._backwardGpio.digitalWrite(0);
-        this.speed = 0;
     }
 }
 
