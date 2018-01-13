@@ -33,4 +33,8 @@ export class CarControllerService {
   public stop(){
     this.messages.next(new CarControlMessage('move', 'stop'))
   }
+  
+  public setSpeed(speed){
+    this.messages.next(new CarControlMessage('setSpeed', speed));
+  }
 }
