@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MovementComponent } from './movement/movement.component';
@@ -16,7 +16,8 @@ import { CameraComponent } from './camera/camera.component';
     CameraComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [CarControllerService, WebsocketService],
   bootstrap: [AppComponent]

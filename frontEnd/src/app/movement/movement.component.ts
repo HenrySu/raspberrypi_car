@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CarControllerService } from '../car-controller.service';
 
 @Component({
@@ -8,24 +8,31 @@ import { CarControllerService } from '../car-controller.service';
 })
 export class MovementComponent implements OnInit {
 
-  constructor(private carController: CarControllerService) { }
+  constructor(private carController: CarControllerService) {
+    
+   }
+
+  @Input()
+  public speed: string;
+
+  public readonly predifinedSpeeds: string[] = ["low", "medium", "high"];
 
   ngOnInit() {
   }
 
-  forward(){
+  forward() {
     this.carController.forward();
   }
-  backward(){
+  backward() {
     this.carController.backward();
   }
-  turnLeft(){
+  turnLeft() {
     this.carController.turnLeft();
   }
-  turnRight(){
+  turnRight() {
     this.carController.turnRight();
   }
-  stop(){
+  stop() {
     this.carController.stop();
   }
 }
