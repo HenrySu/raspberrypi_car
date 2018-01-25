@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { environment } from '../../environments/environment';
+import { CarControllerService } from '../car-controller.service';
 
 @Component({
   selector: 'app-camera',
@@ -7,11 +8,22 @@ import { environment } from '../../environments/environment';
   styleUrls: ['./camera.component.css']
 })
 export class CameraComponent implements OnInit {
-
-  constructor() { }
   public cameraServerUrl: string = `http://${environment.cameraServerUrl}`;
+
+  constructor(private carController:CarControllerService) { }
 
   ngOnInit() {
   }
-
+  cameraUp(){
+    this.carController.cameraUp();
+  }
+  cameraDown(){
+    this.carController.cameraDown();
+  }
+  cameraLeft(){
+    this.carController.cameraLeft();
+  }
+  cameraRight(){
+    this.carController.cameraRight();
+  }
 }
