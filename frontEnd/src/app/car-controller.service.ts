@@ -41,4 +41,19 @@ export class CarControllerService {
   public setSpeed(speed) {
     this.sendMessage('setSpeed', speed);
   }
+
+  public cameraUp(){
+    this.sendMessage("camera", "up");
+  }
+
+  public cameraDown(){
+    this.sendMessage("camera", "down");
+  }
+
+  public cameraLeft(){
+    this.sendMessage("camera", "left");
+  }
+  public cameraRight(){
+    this.sendMessage("camera", "right");
+  }
 }
