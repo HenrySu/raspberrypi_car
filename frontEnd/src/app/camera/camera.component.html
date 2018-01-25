@@ -1,1 +1,7 @@
 <img src="{{cameraServerUrl}}" width="568" height="426">
+<br>
+<label>Camera position:</label>
+<button id="up" (mousedown)="cameraUp()" (mouseup)="stop()">up</button>
+<button id="down" (mousedown)="cameraDown()" (mouseup)="stop()">down</button>
+<button id="left" (mousedown)="cameraLeft()" (mouseup)="stop()">left</button>
+<button id="right" (mousedown)="cameraRight()" (mouseup)="stop()">right</button>
