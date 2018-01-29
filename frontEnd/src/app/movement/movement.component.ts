@@ -27,7 +27,7 @@ export class MovementComponent implements OnInit {
   public predefinedSpeeds(): string[] {
     return [...this.speedStr2SpeedValueMap.keys()];
   }
-  public readonly speedStr2SpeedValueMap = new Map<string, number>([["low", 40], ["medium", 80], ["high", 100]]);
+  public readonly speedStr2SpeedValueMap = new Map<string, number>([["low", 50], ["medium", 100], ["high", 150]]);
 
   ngOnInit() {
     this.speed = this.predefinedSpeeds()[0];
